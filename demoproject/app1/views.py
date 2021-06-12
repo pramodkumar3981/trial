@@ -6,4 +6,4 @@ from django.core.files.storage import FileSystemStorage
 
 # HOME PAGE
 def home(request):
-    return render(request,'base.html')
+    return render(request,'home.html')
