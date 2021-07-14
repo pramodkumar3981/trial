@@ -131,11 +131,24 @@ STATICFILES_DIRS=[
     STATIC_DIR
 ]
 
-#MEDIA VARIABLES
+# MEDIA VARIABLES
 MEDIA_ROOT = BASE_DIR/'media'
 MEDIA_URL = '/media/'
 
-#EMAIL BACKEND VARIABLES
+# Authentication Direct links
+
+LOGIN_REDIRECT_URL = 'home2'
+LOGOUT_REDIRECT_URL = 'login'
+
+# EMAIL BACKEND VARIABLES
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "pramodrao3981@gmail.com"
+EMAIL_HOST_PASSWORD = "9467755510"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+
 
 
 # Default primary key field type

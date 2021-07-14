@@ -21,5 +21,13 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('app1.urls')),
-    path('accounts',include('django.contrib.auth.urls'))
+    path('home2/',include('app1.urls')),
+    path('signup/',include('app1.urls')),
+    path('contact/',include('app1.urls')),
+    path('dashboard/',include('app1.urls')),
+    path('myaccount/',include('app1.urls')),
+    path('newsletter/',include('app1.urls')),
+    path('search/',include('app1.urls')),
+    path('updateprofileuser/',include('app1.urls')),
+    path('accounts/',include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
