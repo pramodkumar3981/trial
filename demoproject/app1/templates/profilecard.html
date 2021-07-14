@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+
+
+    <!--Only for demo purpose - no need to add.-->
+
+
+	    <link rel="stylesheet" href="{% static 'profilecss/style.css' %}">
+</head>
+<body>
+
+<div class="ScriptTop">
+    <div class="rt-container">
+        <div class="col-rt-4" id="float-right">
+
+            <!-- Ad Here -->
+
+        </div>
+        <div class="col-rt-2">
+
+        </div>
+    </div>
+</div>
+
+<header class="ScriptHeader">
+    <div class="rt-container">
+    	<div class="col-rt-12">
+        	<div class="rt-heading">
+            	<h1 style="text-align:center;">Welcome {{user.first_name|title}} {{user.last_name|title}}</h1>
+            </div>
+        </div>
+    </div>
+</header>
+
+<section>
+    <div class="rt-container">
+          <div class="col-rt-12">
+              <div class="Scriptcontent">
+
+<!-- Student Profile -->
+<div class="student-profile py-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent text-center">
+            <img class="profile_img" src="/media/{{current_user.profile_pic}}" alt="student dp">
+            <h3>{{user.first_name}} {{user.last_name}}</h3>
+          </div>
+          <div class="card-body">
+            <a class="mb-0" href="{% url 'home2' %}"><strong class="pr-1">Home Page</strong></a>
+            <br>
+            <a class="mb-0" href="{% url 'password_change' %}"><strong class="pr-1">Change Password</strong></a>
+            <br>
+            <a class="mb-0" href="{% url 'updateuser' %}"><strong class="pr-1">Update Profile</strong></a>
+
+            <p class="mb-0"><strong class="pr-1">Last Update:</strong>{{current_user.doc}}</p>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card shadow-sm">
+          <div class="card-header bg-transparent border-0">
+            <h3 class="mb-0"><i class="far fa-clone pr-1"></i>General Information</h3>
+          </div>
+          <div class="card-body pt-0">
+            <table class="table table-bordered">
+              <tr>
+                <th width="30%">First Name</th>
+                <td width="2%">:</td>
+                <td>{{user.first_name|title}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Last Name</th>
+                <td width="2%">:</td>
+                <td>{{user.last_name|title}}</td>
+              </tr>
+              <tr>
+                <th width="30%">User Name</th>
+                <td width="2%">:</td>
+                <td>{{user.username}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Email Address</th>
+                <td width="2%">:</td>
+                <td>{{user.email}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Contact Number</th>
+                <td width="2%">:</td>
+                <td>{{current_user.phone}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Gender</th>
+                <td width="2%">:</td>
+                <td>{{current_user.gender|title}}</td>
+              </tr>
+              <tr>
+                <th width="30%">City</th>
+                <td width="2%">:</td>
+                <td>{{current_user.city|title}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Last Login</th>
+                <td width="2%">:</td>
+                <td>{{user.last_login}}</td>
+              </tr>
+              <tr>
+                <th width="30%">Last Update</th>
+                <td width="2%">:</td>
+                <td>{{current_user.doc}}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+    		</div>
+		</div>
+    </div>
+</section>
+
+
+
+    <!-- Analytics -->
+
+	</body>
+{% endblock content %}
